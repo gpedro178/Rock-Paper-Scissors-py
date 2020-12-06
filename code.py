@@ -1,6 +1,6 @@
 #Rock Paper Scissors V3.0
 #Player VS Computer
-#Now with rounds
+#Now with rounds!
 
 #Allowing the use of random selection
 import random
@@ -28,8 +28,8 @@ print("")
 
 #Checking Player 1 choice
 while (playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors") :
-    print("That\'s not a correct choice, try again please.")
-    playerChoice = input("To play choose 'Rock', 'Paper' or 'Scissors' ->").lower()
+    print("That's not a correct choice, try again please.")
+    playerChoice = input("Choose 'Rock', 'Paper' or 'Scissors' -> ").lower()
     print("")
 
 computerChoice = random.choice(gameOptions)
