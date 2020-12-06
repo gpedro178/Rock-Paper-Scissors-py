@@ -14,13 +14,13 @@ roundsChoice = -1
 
 while (roundsChoice < 0) : 
     try:
-        roundsChoice = int(input("Please choose how many rounds you want to play \nor choose '0' to exit-> "))
+        roundsChoice = int(input("Please choose how many rounds you want to play \n(1, 2 or more) or '0' to exit-> "))
         print("")
         if roundsChoice == 0 :
             exit()
     except ValueError:
         print("")
-        print("That's not a number, try again!")
+        print("That's not a number, choose a number or '0' to exit->")
         print("")
 
 playerChoice = input("To play choose 'Rock', 'Paper' or 'Scissors' -> ").lower()
