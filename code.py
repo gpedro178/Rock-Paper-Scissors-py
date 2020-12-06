@@ -1,42 +1,57 @@
-#Rock Paper Scissors V2.0
+#Rock Paper Scissors V3.0
 #Player VS Computer
+#Now with rounds
 
 #Allowing the use of random selection
 import random
 
 gameOptions = ["rock", "paper", "scissors"]
 
-player1Choice = input("To play choose 'Rock', 'Paper' or 'Scissors' -> ").lower()
+playerScore = 0
+computerScore = 0
+
+roundsChoice = -1
+
+while (roundsChoice < 0) : 
+    try:
+        roundsChoice = int(input("Please choose how many rounds you want to play \nor choose '0' to exit-> "))
+        print("")
+    except ValueError:
+        print("")
+        print("That's not a number, try again!")
+        print("")
+
+playerChoice = input("To play choose 'Rock', 'Paper' or 'Scissors' -> ").lower()
 print("")
 
 #Checking Player 1 choice
-while (player1Choice != "rock" and player1Choice != "paper" and player1Choice != "scissors") :
+while (playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors") :
     print("That\'s not a correct choice, try again please.")
-    player1Choice = input("To play choose 'Rock', 'Paper' or 'Scissors' ->").lower()
+    playerChoice = input("To play choose 'Rock', 'Paper' or 'Scissors' ->").lower()
     print("")
 
 computerChoice = random.choice(gameOptions)
 
-print("Player:", player1Choice, "VS","Computer:", computerChoice)
+print("Player:", playerChoice, "VS","Computer:", computerChoice)
 print("")
 
 #Checking for a winner
-if player1Choice == "rock" and computerChoice == "paper" :
+if playerChoice == "rock" and computerChoice == "paper" :
     print("Paper covers rock, Computer wins!")
 
-elif player1Choice == "rock" and computerChoice == "scissors" :
+elif playerChoice == "rock" and computerChoice == "scissors" :
     print("Rock crushes scissors, Player wins!")
 
-elif player1Choice == "paper" and computerChoice == "scissors" :
+elif playerChoice == "paper" and computerChoice == "scissors" :
     print("Scissors cut paper, Computer wins!")
 
-elif player1Choice == "paper" and computerChoice == "rock" :
+elif playerChoice == "paper" and computerChoice == "rock" :
     print("Paper covers rock, Player wins!")
 
-elif player1Choice == "scissors" and computerChoice == "rock" :
+elif playerChoice == "scissors" and computerChoice == "rock" :
     print("Rock crushes scissors, Computer wins!")
 
-elif player1Choice == "scissors" and computerChoice == "paper" :
+elif playerChoice == "scissors" and computerChoice == "paper" :
     print("Scissors cut paper, Player wins!")
 
 else :
