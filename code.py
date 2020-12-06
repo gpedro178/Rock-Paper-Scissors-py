@@ -23,7 +23,7 @@ while (roundsChoice < 0) :
         print("That's not a number, choose a number or '0' to exit->")
         print("")
 
-playerChoice = input("To play choose 'Rock', 'Paper' or 'Scissors' -> ").lower()
+playerChoice = input("Choose 'Rock', 'Paper' or 'Scissors' -> ").lower()
 print("")
 
 #Checking Player 1 choice
