@@ -23,38 +23,64 @@ while (roundsChoice < 0) :
         print("That's not a number, choose a number or '0' to exit->")
         print("")
 
-playerChoice = input("Choose 'Rock', 'Paper' or 'Scissors' -> ").lower()
-print("")
+startingRoundNumber = 0
 
-#Checking Player 1 choice
-while (playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors") :
-    print("That's not a correct choice, try again please.")
+while (startingRoundNumber < roundsChoice) :
+    print("ROUND:", startingRoundNumber + 1)
+
     playerChoice = input("Choose 'Rock', 'Paper' or 'Scissors' -> ").lower()
     print("")
 
-computerChoice = random.choice(gameOptions)
+    #Checking Player 1 choice
+    while (playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors") :
+        print("That's not a correct choice, try again please.")
+        playerChoice = input("Choose 'Rock', 'Paper' or 'Scissors' -> ").lower()
+        print("")
 
-print("Player:", playerChoice, "VS","Computer:", computerChoice)
-print("")
+    computerChoice = random.choice(gameOptions)
 
-#Checking for a winner
-if playerChoice == "rock" and computerChoice == "paper" :
-    print("Paper covers rock, Computer wins!")
+    print("Player:", playerChoice, "VS","Computer:", computerChoice)
+    print("")
 
-elif playerChoice == "rock" and computerChoice == "scissors" :
-    print("Rock crushes scissors, Player wins!")
+    #Checking for a winner
+    if playerChoice == "rock" and computerChoice == "paper" :
+        print("Paper covers rock, Computer win this round!")
+        computerScore += 1
+        print("")
 
-elif playerChoice == "paper" and computerChoice == "scissors" :
-    print("Scissors cut paper, Computer wins!")
+    elif playerChoice == "rock" and computerChoice == "scissors" :
+        print("Rock crushes scissors, Player win this round!")
+        playerScore += 1
 
-elif playerChoice == "paper" and computerChoice == "rock" :
-    print("Paper covers rock, Player wins!")
+    elif playerChoice == "paper" and computerChoice == "scissors" :
+        print("Scissors cut paper, Computer win this round!")
+        computerScore += 1
 
-elif playerChoice == "scissors" and computerChoice == "rock" :
-    print("Rock crushes scissors, Computer wins!")
+    elif playerChoice == "paper" and computerChoice == "rock" :
+        print("Paper covers rock, Player win this round!")
+        playerScore += 1
 
-elif playerChoice == "scissors" and computerChoice == "paper" :
-    print("Scissors cut paper, Player wins!")
+    elif playerChoice == "scissors" and computerChoice == "rock" :
+        print("Rock crushes scissors, Computer win this round!")
+        computerScore += 1
 
+    elif playerChoice == "scissors" and computerChoice == "paper" :
+        print("Scissors cut paper, Player win this round!")
+        playerScore += 1
+
+    else :
+        print("Draw! No points!")
+    
+    #Printing Score
+    print("Player Score:", playerScore, " ", "Computer Score:", computerScore)
+    print("")
+
+    startingRoundNumber += 1
+
+#Setting final score
+if (playerScore > computerScore) :
+    print("The final score show that you have beaten the computer!")
+elif (playerScore < computerScore) :
+    print("The final score show that the computer have won this time!")
 else :
-    print("Draw!")
+    print("The final score show that this ended in a draw!")
