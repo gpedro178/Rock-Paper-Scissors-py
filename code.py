@@ -16,6 +16,8 @@ while (roundsChoice < 0) :
     try:
         roundsChoice = int(input("Please choose how many rounds you want to play \nor choose '0' to exit-> "))
         print("")
+        if roundsChoice == 0 :
+            exit()
     except ValueError:
         print("")
         print("That's not a number, try again!")
