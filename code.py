@@ -1,33 +1,40 @@
-#Piedra, Papel o Tijera
+#Rock Paper Scissors V2.0
+#Player VS Computer
 
-#Pedir elección de jugador 1
-eleccionJugador1 = input("Jugador 1 elija Piedra, Papel o Tijera ->").lower()
+#Allowing the use of random selection
+import random
 
-#Verificar que la opción sea valida
-while (eleccionJugador1 != "piedra" and eleccionJugador1 != "papel" and eleccionJugador1 != "tijera") :
-    print("Eso no es una opción, intenta de nuevo.")
-    eleccionJugador1 = input("Jugador 1 elija Piedra, Papel o Tijera ->").lower()
+gameOptions = ["rock", "paper", "scissors"]
 
-#Pedir elección de jugador 2
-eleccionJugador2 = input("Jugador 2 elija Piedra, Papel o Tijera ->").lower()
+player1Choice = input("To play choose \"Rock\", \"Paper\" or \"Scissors\" ->").lower()
 
-#Verificar que la opción sea valida
-while (eleccionJugador2 != "piedra" and eleccionJugador2 != "papel" and eleccionJugador2 != "tijera") :
-    print("Eso no es una opción, intenta de nuevo.")
-    eleccionJugador2 = input("Jugador 2 elija Piedra, Papel o Tijera ->").lower()
+#Checking Player 1 choice
+while (player1Choice != "rock" and player1Choice != "paper" and player1Choice != "scissors") :
+    print("That\'s not a correct choice, try again please.")
+    player1Choice = input("To play choose \"Rock\", \"Paper\" or \"Scissors\" ->").lower()
 
-#Comparar elecciones y declarar ganador
-if eleccionJugador1 == "piedra" and eleccionJugador2 == "papel" :
-    print("Jugador 2 gana!")
-elif eleccionJugador1 == "piedra" and eleccionJugador2 == "tijera" :
-    print("Jugador 1 gana!")
-elif eleccionJugador1 == "papel" and eleccionJugador2 == "tijera" :
-    print("Jugador 2 gana!")
-elif eleccionJugador1 == "papel" and eleccionJugador2 == "piedra" :
-    print("Jugador 1 gana!")
-elif eleccionJugador1 == "tijera" and eleccionJugador2 == "piedra" :
-    print("Jugador 2 gana!")
-elif eleccionJugador1 == "tijera" and eleccionJugador2 == "papel" :
-    print("Jugador 1 gana!")
+computerChoice = random.choice(gameOptions)
+
+print("Player:", player1Choice, "VS","Computer:", computerChoice)
+
+#Checking for a winner
+if player1Choice == "rock" and computerChoice == "paper" :
+    print("Paper covers rock, Computer wins!")
+
+elif player1Choice == "rock" and computerChoice == "scissors" :
+    print("Rock crushes scissors, Player wins!")
+
+elif player1Choice == "paper" and computerChoice == "scissors" :
+    print("Scissors cut paper, Computer wins!")
+
+elif player1Choice == "paper" and computerChoice == "rock" :
+    print("Paper covers rock, Player wins!")
+
+elif player1Choice == "scissors" and computerChoice == "rock" :
+    print("Rock crushes scissors, Computer wins!")
+
+elif player1Choice == "scissors" and computerChoice == "paper" :
+    print("Scissors cut paper, Player wins!")
+
 else :
-    print("Empate!")
+    print("Draw!")
