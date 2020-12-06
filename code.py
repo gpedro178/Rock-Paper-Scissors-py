@@ -6,16 +6,19 @@ import random
 
 gameOptions = ["rock", "paper", "scissors"]
 
-player1Choice = input("To play choose \"Rock\", \"Paper\" or \"Scissors\" ->").lower()
+player1Choice = input("To play choose 'Rock', 'Paper' or 'Scissors' ->").lower()
+print("")
 
 #Checking Player 1 choice
 while (player1Choice != "rock" and player1Choice != "paper" and player1Choice != "scissors") :
     print("That\'s not a correct choice, try again please.")
-    player1Choice = input("To play choose \"Rock\", \"Paper\" or \"Scissors\" ->").lower()
+    player1Choice = input("To play choose 'Rock', 'Paper' or 'Scissors' ->").lower()
+    print("")
 
 computerChoice = random.choice(gameOptions)
 
 print("Player:", player1Choice, "VS","Computer:", computerChoice)
+print()
 
 #Checking for a winner
 if player1Choice == "rock" and computerChoice == "paper" :
