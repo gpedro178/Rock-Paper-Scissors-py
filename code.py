@@ -1,4 +1,4 @@
-#Rock Paper Scissors V3.0
+#Rock Paper Scissors V3.1
 #Player VS Computer
 #Now with rounds!
 
@@ -20,7 +20,7 @@ while (roundsChoice < 0) :
             exit()
     except ValueError:
         print("")
-        print("That's not a number, choose a number or '0' to exit->")
+        print("That's not a number, choose a number or '0' to exit-> ")
         print("")
 
 startingRoundNumber = 0
@@ -32,7 +32,7 @@ while (startingRoundNumber < roundsChoice) :
     print("")
 
     #Checking Player 1 choice
-    while (playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors") :
+    while (playerChoice not in gameOptions) :
         print("That's not a correct choice, try again please.")
         playerChoice = input("Choose 'Rock', 'Paper' or 'Scissors' -> ").lower()
         print("")
@@ -80,7 +80,9 @@ while (startingRoundNumber < roundsChoice) :
 #Setting final score
 if (playerScore > computerScore) :
     print("The final score show that you have beaten the computer!")
+
 elif (playerScore < computerScore) :
     print("The final score show that the computer have won this time!")
+
 else :
     print("The final score show that this ended in a draw!")
